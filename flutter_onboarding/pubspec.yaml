@@ -29,6 +29,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  lottie: ^1.1.0
+  google_fonts: ^2.1.1
 
 
   # The following adds the Cupertino Icons font to your application.
