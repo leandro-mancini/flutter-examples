@@ -61,6 +61,11 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/icons/icon_home.svg
+    - assets/icons/icon_chart.svg
+    - assets/icons/icon_notification.svg
+    - assets/icons/icon_perfil.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
