@@ -32,15 +32,39 @@ class _AppState extends State<App> {
       body: Center(
         child: widgetOptions.elementAt(selectedIndex),
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color(0xFF435C49),
-        onPressed: () {},
-        child: const Icon(Icons.add),
+      floatingActionButton: SizedBox(
+        height: 42,
+        width: 42,
+        child: FittedBox(
+          child: FloatingActionButton(
+            onPressed: () {},
+            elevation: 0,
+            backgroundColor: Colors.white,
+            foregroundColor: Colors.black,
+            child: Container(
+              width: 70,
+              height: 70,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: const BorderRadius.all(Radius.circular(50)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.12),
+                    spreadRadius: 0,
+                    blurRadius: 14,
+                    offset: const Offset(0, 14)
+                  )
+                ]
+              ),
+              child: const Icon(Icons.keyboard_voice_outlined, color: Color(0xFFFE8484), size: 32,),
+            ),
+          ),
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
         elevation: 52,
+        color: Colors.white,
         notchMargin: 8.0,
         child: SizedBox(
           height: 60.0,
