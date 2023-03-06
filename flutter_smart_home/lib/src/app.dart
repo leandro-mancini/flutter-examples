@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'screens/home/index.dart';
+
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
 
@@ -12,7 +14,7 @@ class _AppState extends State<App> {
   int selectedIndex = 0;
 
   static List<Widget> widgetOptions = const <Widget>[
-    Text('Home Page'),
+    HomeScreen(),
     Text('Dashboard'),
     Text('Notificações'),
     Text('Perfil'),
