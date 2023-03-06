@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_smart_home/src/screens/home/index.dart';
+import 'package:flutter_smart_home/src/app.dart';
 import 'package:flutter_smart_home/src/screens/onboarding/index.dart';
 
 void main() {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const OnboardingScreen(),
-        '/home': (context) => const HomeScreen(),
+        '/home': (context) => const App(),
       },
     );
   }
