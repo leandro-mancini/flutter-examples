@@ -15,6 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return const SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xFFF1F7FC),
         body: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
