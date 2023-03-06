@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'src/app.dart';
+import 'package:flutter_smart_home/src/screens/home/index.dart';
+import 'package:flutter_smart_home/src/screens/onboarding/index.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const App(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const OnboardingScreen(),
+        '/home': (context) => const HomeScreen(),
+      },
     );
   }
 }
