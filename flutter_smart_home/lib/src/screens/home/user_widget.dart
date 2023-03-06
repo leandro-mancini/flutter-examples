@@ -6,9 +6,11 @@ class UserWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 24,
-        vertical: 20
+      padding: const EdgeInsets.only(
+        left: 24,
+        right: 24,
+        bottom: 48,
+        top: 36
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -17,23 +19,29 @@ class UserWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
               Text(
-                'Hi, Bruce!',
+                'Welcome, Arya!',
                 style: TextStyle(
-                  color: Color(0xFF303030),
-                  fontSize: 32,
+                  color: Color(0xFF21252A),
+                  fontSize: 20,
                   fontWeight: FontWeight.w700
                 ),
               ),
-              SizedBox(height: 8,),
+              SizedBox(height: 4,),
               Text(
-                'Good Morning! 🌞️'
+                'Let’s manage your smart home',
+                style: TextStyle(
+                  color: Color(0xFF79828F)
+                ),
               )
             ],
           ),
-          const CircleAvatar(
-            radius: 22,
-            backgroundImage: NetworkImage('https://picsum.photos/200'),
-            backgroundColor: Colors.grey,
+          const SizedBox(
+            width: 52,
+            height: 52,
+            child: CircleAvatar(
+              backgroundImage: NetworkImage('https://picsum.photos/200'),
+              backgroundColor: Colors.grey,
+            ),
           ),
         ],
       ),
