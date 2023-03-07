@@ -1,9 +1,23 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_home/src/screens/home/temperature_widget.dart';
+import 'package:flutter_smart_home/src/utils/icons.dart';
 
 import 'equipment_widget.dart';
 import 'menu_widget.dart';
 import 'user_widget.dart';
+
+class Equipment {
+  String name;
+  bool active;
+  String icon;
+
+  Equipment({
+    required this.name,
+    required this.active,
+    required this.icon,
+  });
+}
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -13,7 +27,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final List _gridItems = List.generate(6, (i) => "Item $i");
+  final List<Equipment> _gridItems = [
+    Equipment(name: 'Air \nConditioner', active: true, icon: FIcons.IconAirConditioner),
+    Equipment(name: 'Smart \nLamp', active: false, icon: FIcons.IconSmartLamp),
+    Equipment(name: 'Smart \nTv', active: false, icon: FIcons.IconSmartTv),
+    Equipment(name: 'Google \nSmart Home', active: false, icon: FIcons.IconGoogleSmartHome),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -42,11 +61,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisCount: 2,
                   mainAxisSpacing: 10,
                   crossAxisSpacing: 10,
-                  childAspectRatio: 0.82,
+                  mainAxisExtent: 180
                 ),
                 delegate: SliverChildBuilderDelegate(
                   (context, index) {
-                    return const EquipmentWidget();
+                    return EquipmentWidget(
+                      name: _gridItems[index].name,
+                      active: _gridItems[index].active,
+                      icon: _gridItems[index].icon,
+                    );
                   },
                   childCount: _gridItems.length,
                 ),

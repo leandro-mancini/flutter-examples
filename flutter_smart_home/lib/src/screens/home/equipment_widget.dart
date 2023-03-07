@@ -1,8 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class EquipmentWidget extends StatefulWidget {
-  const EquipmentWidget({Key? key}) : super(key: key);
+  final String name;
+  final bool active;
+  final String icon;
+
+  const EquipmentWidget({Key? key, required this.name, required this.active, required this.icon}) : super(key: key);
 
   @override
   State<EquipmentWidget> createState() => _EquipmentWidgetState();
@@ -10,6 +15,13 @@ class EquipmentWidget extends StatefulWidget {
 
 class _EquipmentWidgetState extends State<EquipmentWidget> {
   bool isActive = false;
+
+  @override
+  void initState() {
+    isActive = widget.active;
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,26 +34,35 @@ class _EquipmentWidgetState extends State<EquipmentWidget> {
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              width: 46,
-              height: 46,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(16))
-              ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: 46,
+                  height: 46,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(16))
+                  ),
+                  padding: const EdgeInsets.all(6),
+                  child: Center(
+                    child: SvgPicture.asset(widget.icon, color: isActive ? const Color(0xFFFEBB1C) : const Color(0xFF1D305E),),
+                  ),
+                ),
+                const SizedBox(height: 14,),
+                Text(
+                  widget.name,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(height: 14,),
-            const Text(
-              'Smart \nLamp',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w400
-              ),
-            ),
-            const SizedBox(height: 14,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
