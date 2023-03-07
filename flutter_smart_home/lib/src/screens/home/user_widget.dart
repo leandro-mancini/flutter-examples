@@ -26,7 +26,7 @@ class UserWidget extends StatelessWidget {
                   fontWeight: FontWeight.w700
                 ),
               ),
-              SizedBox(height: 4,),
+              SizedBox(height: 10,),
               Text(
                 'Let’s manage your smart home',
                 style: TextStyle(

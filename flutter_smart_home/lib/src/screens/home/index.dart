@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_home/src/screens/home/temperature_widget.dart';
 
+import 'menu_widget.dart';
 import 'user_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -24,6 +25,9 @@ class _HomeScreenState extends State<HomeScreen> {
             SliverToBoxAdapter(
               child: TemperatureWidget(),
             ),
+            SliverToBoxAdapter(
+              child: MenuWidget(),
+            )
           ],
         ),
       ),
