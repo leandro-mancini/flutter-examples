@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_smart_home/src/utils/icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'screens/home/index.dart';
@@ -16,8 +17,8 @@ class _AppState extends State<App> {
   static List<Widget> widgetOptions = const <Widget>[
     HomeScreen(),
     Text('Dashboard'),
-    Text('Notificações'),
-    Text('Perfil'),
+    Text('Cameras'),
+    Text('Configurações'),
   ];
 
   void _onItemTapped(int index) {
@@ -74,14 +75,14 @@ class _AppState extends State<App> {
             children: [
               IconButton(
                 icon: SvgPicture.asset(
-                  'assets/icons/icon_home.svg',
+                  FIcons.IconHome,
                   color: selectedIndex == 0 ? const Color(0xFF3C5342) : const Color(0xFFBABDC1),
                 ),
                 onPressed: () => _onItemTapped(0),
               ),
               IconButton(
                 icon: SvgPicture.asset(
-                  'assets/icons/icon_chart.svg',
+                  FIcons.IconChart,
                   color: selectedIndex == 1 ? const Color(0xFF3C5342) : const Color(0xFFBABDC1),
                 ),
                 onPressed: () => _onItemTapped(1),
@@ -92,14 +93,14 @@ class _AppState extends State<App> {
               ),
               IconButton(
                 icon: SvgPicture.asset(
-                  'assets/icons/icon_notification.svg',
+                  FIcons.IconCamera,
                   color: selectedIndex == 2 ? const Color(0xFF3C5342) : const Color(0xFFBABDC1),
                 ),
                 onPressed: () => _onItemTapped(2),
               ),
               IconButton(
                 icon: SvgPicture.asset(
-                  'assets/icons/icon_perfil.svg',
+                  FIcons.IconSetting,
                   color: selectedIndex == 3 ? const Color(0xFF3C5342) : const Color(0xFFBABDC1),
                 ),
                 onPressed: () => _onItemTapped(3),
