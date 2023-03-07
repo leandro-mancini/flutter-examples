@@ -69,6 +69,11 @@ flutter:
     - assets/icons/icon_notification.svg
     - assets/icons/icon_perfil.svg
 
+    - assets/icons/icon_air_conditioner.svg
+    - assets/icons/icon_google_smart_home.svg
+    - assets/icons/icon_smart_lamp.svg
+    - assets/icons/icon_smart_tv.svg
+
     - assets/images/Sunny_Windy.png
 
     - assets/lottie/onboarding_animation.json
